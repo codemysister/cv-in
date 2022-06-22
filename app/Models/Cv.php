@@ -30,4 +30,9 @@ class Cv extends Model
     {
         return $this->hasMany('App\Models\Keahlian');
     }
+
+    public function hobis()
+    {
+        return $this->hasMany('App\Models\Hobi');
+    }
 }

@@ -184,6 +184,30 @@
                         </div>
                     </div>
 
+                    <div class="timeline-item timeline-item-arrow-sm">
+                        <div class="timeline-point timeline-point-primary">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                        <div class="timeline-event">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h5 class="panel-title">Hobi</h5>
+                                </div>
+                                <div class="panel-body">
+                                    
+                                    @foreach ($cv->hobis as $hobi)
+                                    <ul>    
+                                        <li class="mb-4">
+                                            <span style="font-weight: 900">{{ $hobi->hobi }}</span> 
+                                        </li>
+                                    </ul>    
+                                    @endforeach
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>                

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\CVController as BackendCV;
 use App\Http\Controllers\Frontend\CvController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,16 +17,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route Google Auth
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('google.callback');
+
+// Route auth laravel ui
+Auth::routes();
+
+// Route user
 Route::get('/', function () {
     return view('frontend.index');
 });
-
-Auth::routes();
-
 Route::get('/home', [CvController::class, 'index']);
 
 
-Route::group(['prefix' => 'admin', 'middleware' => ['role:Admin']], function () {
+
+// Route Dashboard Admin
+Route::group(['prefix' => 'admin', 'middleware' => ['role:Admin', 'auth']], function () {
     Route::get('/dashboard', [BackendCV::class, 'dashboard'])->name('dashboard');
 
     Route::prefix('cv')->group(function () {
