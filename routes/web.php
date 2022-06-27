@@ -28,7 +28,14 @@ Auth::routes();
 Route::get('/', function () {
     return view('frontend.index');
 });
-Route::get('/home', [CvController::class, 'index']);
+
+Route::middleware('auth')->group(function () {
+
+    Route::get('/templates', [CvController::class, 'index']);
+    Route::post('/templates', [CvController::class, 'pilihTemplate'])->name('template.pilih');
+    Route::get('/template-form', [CvController::class, 'templateForm'])->name('template.form');
+});
+// Route::get('/home', [CvController::class, 'index']);
 
 
 

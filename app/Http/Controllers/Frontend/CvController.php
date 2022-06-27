@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Template;
 use Illuminate\Http\Request;
 
 class CvController extends Controller
@@ -14,8 +15,20 @@ class CvController extends Controller
      */
     public function index()
     {
+        $templates = Template::all();
+        return view("frontend.user.template-page", compact('templates'));
+    }
 
-        return view("home");
+    public function pilihTemplate(Request $request)
+    {
+
+        $request->session()->put('template_id', $request->template_id);
+        return response($request->template_id, 200);
+    }
+
+    public function templateForm()
+    {
+        return view('frontend.user.cv-form');
     }
 
     /**
