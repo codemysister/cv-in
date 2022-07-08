@@ -17,8 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('template_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('nama_depan');
-            $table->string('nama_belakang');
+            $table->string('nama');
             $table->string('email');
             $table->string('nomor_telp');
             $table->text('alamat');

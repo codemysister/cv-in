@@ -1,14 +1,42 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-
-section{
-    height: 600px;
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap');
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
+/* section{
+    height: 600px;
+} */
 
 .jumbotron{
     /* background-image: url('/public/images/v1044-19a.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.template{
+    background-image: url('/frontend/images/bg.jpg');
+    background-size: 300px;
+}
+.card-template .card-parent-header , .card-template .card-parent-footer{
+    background-color: #ffbc65;
+    font-family: 'Fredoka One', cursive;
+    color: white;
+    font-size: 18;
+}
+
+.btn-pilih{
+    font-family: 'Fredoka One', cursive;
+    color: white;
+    background-color: #ff820e;
+}
+
+.btn-pilih:hover{
+    background-color: #ff820e;
+    color: whitesmoke;
 }
 
 .jumbotron .col-kiri{
@@ -64,4 +92,80 @@ background-image: linear-gradient(180deg, #fff5c9 0%, #ffffff 100%);
     background-color: #2f7c1c;
     color: white;
     border: none;
+}
+
+.templates p {
+	color: grey;
+    word-wrap: break-word
+}
+
+.form-cv{
+    width: 95%;
+    margin: auto;
+
+}
+
+#heading {
+	text-transform: uppercase;
+	color: #673AB7;
+	font-weight: normal;
+}
+
+#msform {
+    text-align: center;
+    position: relative;
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+
+    /*stacking fieldsets above each other*/
+    position: relative;
+}
+
+.form-card {
+	text-align: left;
+}
+
+
+.templates{
+    margin-top: 50px;
+    word-wrap: break-word;
+   
+    position: sticky;
+    top: 0;
+    font-size: 14px;
+}
+
+.pengalaman, .deskripsi{
+    text-align: justify;
+}
+
+.card-data{
+    box-shadow: 1px 1px 3px rgb(0, 0, 0);
+    font-family: 'Mitr', sans-serif;
+}
+
+.card-data .card-header{
+    background-color: #FEE140;
+background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);
+}
+
+.btn-download{
+    background-color: #4ee428;
+    font-family: 'Mitr', sans-serif;
+    width: 50%;
+    color: white;
+    margin: 0 auto;
+}
+
+.btn-download:hover{
+    background-color: #2bb908;
+    color: white;
 }

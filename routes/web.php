@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('contacts', function () {
+    return view('default');
+});
+
 // Route Google Auth
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('google.callback');
@@ -28,7 +32,13 @@ Auth::routes();
 Route::get('/', function () {
     return view('frontend.index');
 });
-Route::get('/home', [CvController::class, 'index']);
+Route::middleware('auth')->group(function () {
+
+    Route::get('/templates', [CvController::class, 'index']);
+    Route::post('/templates', [CvController::class, 'pilihTemplate'])->name('template.pilih');
+    Route::post('/download-cv', [CvController::class, 'downloadCV'])->name('download.cv');
+    Route::get('/template-form', [CvController::class, 'templateForm'])->name('template.form');
+});
 
 
 

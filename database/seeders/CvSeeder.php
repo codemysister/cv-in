@@ -21,21 +21,42 @@ class CvSeeder extends Seeder
     {
         Template::create([
             'nama' => 'monocrom',
+            'image' => '/upload/template/template1.png',
             'type' => 'gratis',
-            'harga' => 0
+            'harga' => 0,
+            'col_website' => false,
+            'col_linkedin' => false,
+            'col_kota' => false,
+            'col_kodepos' => false,
+            'col_tanggal_lahir' => false,
+            'col_tempat_lahir' => false,
+            'col_sim' => false,
+            'col_jenis_kelamin' => false,
+            'col_kebangsaan' => false,
+            'col_status_pernikahan' => false,
         ]);
 
         Template::create([
             'nama' => 'colorfull',
+            'image' => '/upload/template/template2.png',
             'type' => 'gratis',
-            'harga' => 15000
+            'harga' => 15000,
+            'col_website' => false,
+            'col_linkedin' => false,
+            'col_kota' => false,
+            'col_kodepos' => false,
+            'col_tanggal_lahir' => false,
+            'col_tempat_lahir' => false,
+            'col_sim' => false,
+            'col_jenis_kelamin' => false,
+            'col_kebangsaan' => false,
+            'col_status_pernikahan' => false,
         ]);
 
         Cv::create([
             'template_id' => 1,
             'user_id' => 2,
-            'nama_depan' => 'Deva',
-            'nama_belakang' => 'Apriana',
+            'nama' => 'Deva Apriana',
             'email' => 'deva@gmail.com',
             'nomor_telp' => '085910680017',
             'alamat' => 'Purwokerto, Jl.Kenanga no 27',
@@ -55,8 +76,7 @@ class CvSeeder extends Seeder
         Cv::create([
             'template_id' => 2,
             'user_id' => 2,
-            'nama_depan' => 'Depol',
-            'nama_belakang' => 'Apriana',
+            'nama' => 'Depol Apriana',
             'email' => 'depol@gmail.com',
             'nomor_telp' => '086262517265',
             'alamat' => 'Purwokerto, Jl.Kenanga no 27',
@@ -78,8 +98,8 @@ class CvSeeder extends Seeder
             'gelar' => 'S.Kom.',
             'kota' => 'Purwokerto',
             'sekolah' => 'SMKN 1 Purwokerto',
-            'tanggal_mulai' => '2017-01-01',
-            'tanggal_selesai' => '2020-01-02',
+            'tahun_mulai' => '2017',
+            'tahun_selesai' => '2020',
             'deskripsi' => 'saya seorang siswa nolep'
         ]);
 
@@ -88,8 +108,8 @@ class CvSeeder extends Seeder
             'gelar' => 'S.Kom.',
             'kota' => 'Purwokerto',
             'sekolah' => 'Telkom',
-            'tanggal_mulai' => '2020-01-01',
-            'tanggal_selesai' => '2024-01-02',
+            'tahun_mulai' => '2020',
+            'tahun_selesai' => '2024',
             'deskripsi' => 'saya seorang mahasiswa kupu-kupu'
         ]);
 

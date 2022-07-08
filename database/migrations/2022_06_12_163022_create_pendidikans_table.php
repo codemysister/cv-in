@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('gelar')->nullable();
             $table->string('kota')->nullable();
             $table->string('sekolah');
-            $table->date('tanggal_mulai');
-            $table->date('tanggal_selesai');
+            $table->string('tahun_mulai');
+            $table->string('tahun_selesai');
             $table->text('deskripsi')->nullable();
             $table->timestamps();
         });

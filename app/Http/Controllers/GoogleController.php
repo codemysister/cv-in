@@ -22,7 +22,7 @@ class GoogleController extends Controller
             $findUser = User::where('google_id', $user->getId())->first();
             if ($findUser) {
                 Auth::login($findUser);
-                return redirect()->intended('/home');
+                return redirect()->intended('/templates');
             } else {
                 $newUser = User::create([
                     'name' => $user->name,
@@ -32,7 +32,7 @@ class GoogleController extends Controller
                 ]);
 
                 Auth::login($newUser);
-                return redirect()->intended('index');
+                return redirect()->intended('/templates');
             }
         } catch (Exception $e) {
             return $this->sendFailedResponse($e->getMessage());
