@@ -1,5 +1,5 @@
 
-    <div class="container templates">
+    <div class="container templates" >
         <section class="data-pribadi">
             <div class="row">
                 <div class="col-3 ">

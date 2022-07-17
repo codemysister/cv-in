@@ -6,8 +6,7 @@
         
             
             <div class="col-md-6 pt-5 " >
-                <form action="{{route('download.cv')}}" method="POST" enctype="multipart/form-data">
-                    @csrf
+                
                 <div class="card card-data">
                     <div class="card-header">
                     Data diri
@@ -322,18 +321,52 @@
                 </div>
 
                 <div class="row mt-3">
-                    <button type="submit" class="btn btn-download">Save & Download</button>
+                    <button type="submit" style="background-color: #4ee428; font-family: 'Mitr', sans-serif; width: 50%; color: white; margin: 0 auto;" class="btn btn-download" id="download" onclick="generatePdf()">Save & Download</button>
                 </div>
-            </form>           
+                    
             </div>
        
-        <div class="col-md-6 d-none d-md-block">
+        <div class="col-md-6 d-none d-md-block" >
             @php
                 $path = "frontend.template_cv.template_{$template_id}";
             @endphp
             @include($path)
         </div>
 	</div>
+
+    <div class="row" id="out_image" hidden>
+        <div class="container" style="width: 75%; margin: 0 3%" id="canvas10">
+            @php
+                $path = "frontend.template_cv.template_{$template_id}_pdf";
+            @endphp
+        @include($path)
+    </div>
+    </div>
+
+    <script>
+        function generatePdf(){
+        console.log("deva");
+        $("#out_image").removeAttr("hidden"); 
+        var imgData;
+
+        
+        html2canvas($('#out_image')[0]).then((canvas) => {
+          
+          imgData = canvas.toDataURL('image/png');
+          console.log(imgData);
+          $("#out_image").append(canvas);
+          var doc = new jsPDF('p', 'mm', 'a4');
+
+       
+          doc.addImage(imgData, 'PNG', 0, 5, 260, 180);
+
+
+          doc.save('download.pdf');
+
+            
+          }
+        )};
+    </script>
 </div>
 
 

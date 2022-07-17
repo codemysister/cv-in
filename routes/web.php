@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/templates', [CvController::class, 'index']);
     Route::post('/templates', [CvController::class, 'pilihTemplate'])->name('template.pilih');
-    Route::post('/download-cv', [CvController::class, 'downloadCV'])->name('download.cv');
+    Route::get('/download-cv', [CvController::class, 'downloadCV'])->name('download.cv');
     Route::get('/template-form', [CvController::class, 'templateForm'])->name('template.form');
 });
 

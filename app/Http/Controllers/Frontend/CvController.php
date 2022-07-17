@@ -7,6 +7,7 @@ use App\Models\Cv;
 use App\Models\Template;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class CvController extends Controller
 {
@@ -36,7 +37,7 @@ class CvController extends Controller
 
     public function downloadCV(Request $request)
     {
-        dd($request->all());
+        return view('frontend.template_cv.template_1_pdf');
     }
 
     /**
