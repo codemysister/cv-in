@@ -33,7 +33,7 @@
             </div>
             <div class="col-9 ">
                 <h3>{{empty($nama) ? 'Irene': $nama}}</h3>
-                <p class="deskripsi">{{empty($deskripsi) ? "A creative and organized professional with 7 + years experience in Social Media Marketing. Experienced at copywriting and proficient at using analytical tools. Have a great interest in the latest social media's best practice and new technology": $deskripsi}}</p>
+                <p class="deskripsi" style="overflow-wrap: break-word;">{{empty($deskripsi) ? "A creative and organized professional with 7 + years experience in Social Media Marketing. Experienced at copywriting and proficient at using analytical tools. Have a great interest in the latest social media's best practice and new technology": $deskripsi}}</p>
                     <p>Address : {{empty($alamat) ? 'Cilandak No. 19, South Jakarta': $alamat}}</p>
                     <p>Email  : {{empty($email) ? 'irene@gmail.com': $email}}</p>
                     <p>Number : {{empty($nomor_telp) ? '087717124721': $nomor_telp}}</p>  
@@ -66,7 +66,7 @@
                <ul>
                 @foreach($pengalaman as $key => $value)
                         <li class="{{$value != "" ? 'd-blok' : 'd-none'}}"><b>{{$value}} {{$value != "" ? "(".$tahun_masuk_pengalaman[$key]. "-" .$tahun_selesai_pengalaman[$key]. ")" : ""}}</b>
-                        <p>{{$deskripsi_pengalaman[$key]}}</p></li>
+                        <p style="overflow-wrap: break-word;">{{$deskripsi_pengalaman[$key]}}</p></li>
                         
                     @endforeach
                </ul>
@@ -84,9 +84,9 @@
     </section>
     </div>
 
-<div id="out_image">
+{{-- <div id="out_image">
 
-</div>
+</div> --}}
     
  
      

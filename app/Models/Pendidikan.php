@@ -9,4 +9,9 @@ class Pendidikan extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function pendidikan()
+    {
+        return $this->belongsTo('\App\Models\Cv');
+    }
 }

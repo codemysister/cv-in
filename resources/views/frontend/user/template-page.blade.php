@@ -37,6 +37,35 @@
     </div>
 </section>
 
+<footer>
+  <div class="container">
+      <div class="row p-5">
+          <div class="col-md-4">
+              <h5 class="heading-footer">Layanan</h5>
+              <p>Buat CV</p>
+              <p>Request Template CV</p>
+              <p>Cek Skor CV</p>
+          </div>
+          <div class="col-md-4">
+              <h5 class="heading-footer">Dukungan</h5>
+              <p>Tentang Kami</p>
+              <p>Kontak</p>
+              <p>FAQ</p>
+          </div>
+          <div class="col-md-4">
+              <h5 class="heading-footer">CV-in</h5>
+              <p>Pernyataan Privasi dan Cookie</p>
+              <p>Syarat dan Ketentuan</p>
+              <p>Biaya</p>
+          </div>
+      </div>
+  </div>
+
+  <div class="row text-mute text-center">
+      <p>2022 © CV-in</p>
+  </div>
+</footer>
+
 <script>
   function getIdTemplate(e){
     let template_id =  e.getAttribute('data-id');

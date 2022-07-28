@@ -3,6 +3,8 @@
 use App\Http\Controllers\Backend\CVController as BackendCV;
 use App\Http\Controllers\Frontend\CvController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\Payment\TripayCallbackController;
+use App\Http\Controllers\Payment\TripayController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,10 +36,15 @@ Route::get('/', function () {
 });
 Route::middleware('auth')->group(function () {
 
+    Route::get('/home', function () {
+        return view('home');
+    });
     Route::get('/templates', [CvController::class, 'index']);
     Route::post('/templates', [CvController::class, 'pilihTemplate'])->name('template.pilih');
     Route::get('/download-cv', [CvController::class, 'downloadCV'])->name('download.cv');
     Route::get('/template-form', [CvController::class, 'templateForm'])->name('template.form');
+    Route::get('/payment-channel', [TripayController::class, 'getPaymentChannels'])->name('payment.channel');
+    Route::post('/payment-detail', [TripayController::class, 'requestTransaction'])->name('payment.detail');
 });
 
 
@@ -45,9 +52,13 @@ Route::middleware('auth')->group(function () {
 // Route Dashboard Admin
 Route::group(['prefix' => 'admin', 'middleware' => ['role:Admin', 'auth']], function () {
     Route::get('/dashboard', [BackendCV::class, 'dashboard'])->name('dashboard');
+    Route::get('/transaksi', [BackendCV::class, 'transaksi'])->name('transaksi');
 
     Route::prefix('cv')->group(function () {
         Route::get('', [BackendCV::class, 'index'])->name('cv.index');
         Route::get('/detail/{id}', [BackendCV::class, 'detail'])->name('cv.detail');
     });
 });
+
+
+Route::post('callback', [TripayCallbackController::class, 'handle'])->name('callback');

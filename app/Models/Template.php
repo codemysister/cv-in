@@ -9,4 +9,9 @@ class Template extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function cvs()
+    {
+        return $this->hasMany('\App\Models\Cv');
+    }
 }

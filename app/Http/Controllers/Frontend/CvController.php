@@ -8,6 +8,7 @@ use App\Models\Template;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 
 class CvController extends Controller
 {
@@ -24,13 +25,13 @@ class CvController extends Controller
 
     public function pilihTemplate(Request $request)
     {
-
         $request->session()->put('template_id', $request->template_id);
         return response($request->template_id, 200);
     }
 
     public function templateForm()
     {
+
         $template = Template::find(Session::get('template_id'));
         return view('frontend.user.cv-form', compact('template'));
     }

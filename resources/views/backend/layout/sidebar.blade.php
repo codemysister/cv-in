@@ -40,7 +40,7 @@
         </li>
 
 
-        <li class=" {{$route == 'pendidikan' ? 'active' : ''}}">
+        {{-- <li class=" {{$route == 'pendidikan' ? 'active' : ''}}">
           <a href="#">
             <i class="fa-solid fa-graduation-cap"></i>
             <span>Pendidikan</span>
@@ -51,6 +51,13 @@
           <a href="#">
             <i class="fa-solid fa-network-wired"></i>
             <span>Pengalaman</span>
+          </a>
+        </li> --}}
+
+        <li class=" {{$route == 'transaksi' ? 'active' : ''}}">
+          <a href="{{route('transaksi')}}">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            <span>Transaksi</span>
           </a>
         </li>
 

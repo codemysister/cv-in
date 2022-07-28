@@ -16,6 +16,11 @@ class Cv extends Model
         return $this->belongsTo('App\Models\User');
     }
 
+    public function template()
+    {
+        return $this->belongsTo('\App\Models\Template');
+    }
+
     public function pendidikans()
     {
         return $this->hasMany('App\Models\Pendidikan');
@@ -24,6 +29,11 @@ class Cv extends Model
     public function pengalamans()
     {
         return $this->hasMany('App\Models\Pengalaman');
+    }
+
+    public function organisasis()
+    {
+        return $this->hasMany('App\Models\Organisasi');
     }
 
     public function keahlians()

@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="{{asset('backend/css/vendors_css.css')}}">
 	
 	<!-- Style-->  
+	<link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.css')}}">
 	<link rel="stylesheet" href="{{asset('backend/css/style.css')}}">
 	<link rel="stylesheet" href="{{asset('backend/css/skin_color.css')}}">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

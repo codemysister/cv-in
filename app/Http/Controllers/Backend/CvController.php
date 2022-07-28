@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cv;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
@@ -33,5 +34,11 @@ class CvController extends Controller
         $cv = Cv::find($id);
 
         return view('backend.cv.detail', compact('cv'));
+    }
+
+    public function transaksi()
+    {
+        $transaksi = Transaction::all();
+        return view('backend.cv.transaksi', compact('transaksi'));
     }
 }
